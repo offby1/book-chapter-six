@@ -52,7 +52,7 @@ public class MainActivity extends Activity {
         addrLb1.setText ("Address: ");
 
         TextView addrValue = new TextView (this);
-        addrValue.setText ("911 Hollywood Blvd");
+        addrValue.setText ("911 Code Blvd");
 
         addressContainer.addView (addrLb1);
         addressContainer.addView (addrValue);
