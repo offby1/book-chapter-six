@@ -16,13 +16,14 @@ public class OtherActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.darker_layout);
 
+        this_activity = this;
+
         b = (Button)this.findViewById(R.id.button1);
         b.setOnClickListener(new OnClickListener()
             {
                 @Override
                 public void onClick(View v) {
-                    // this feels wrong, but ...
-                    Intent i = new Intent("com.github.offby1.intent.action.MAIN");
+                    Intent i = new Intent(this_activity, MainActivity.class);
                     this_activity.startActivity(i);
                 }
             });
