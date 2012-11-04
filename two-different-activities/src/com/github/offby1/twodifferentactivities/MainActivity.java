@@ -36,12 +36,16 @@ public class MainActivity extends HasASettingsMenuActivity {
 
         lv.setOnItemClickListener(new OnItemClickListener() {
 
-                public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+                public void onItemClick(AdapterView<?> arg0, View arg1, int index,
 					long arg3) {
+                    Intent i = new Intent(this_activity, OtherActivity.class);
+
                     Toast.makeText(this_activity, String.format("Someone clicked on %d",
-                                                                arg2),
-                                   Toast.LENGTH_SHORT).show()
-                        ;
+                                                                index),
+                                   Toast.LENGTH_SHORT).show();
+                    if (index == 1) {
+                        this_activity.startActivity(i);
+                    }
 
                 }
             });
