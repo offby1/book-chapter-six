@@ -25,7 +25,7 @@ public class MainActivity extends Activity {
             {
                 @Override
                 public void onClick(View v) {
-                    Intent i = new Intent("com.github.offby1.intent.action.show_other_activity");
+                    Intent i = new Intent(this_activity, OtherActivity.class);
                     this_activity.startActivity(i);
                 }
             });
