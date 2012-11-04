@@ -20,6 +20,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".OtherActivity"
+            android:label="The Other Activity" >
+          <intent-filter>
+            <action android:name="com.github.offby1.intent.action.show_other_activity" />
+            <category android:name="android.intent.category.DEFAULT" />
+          </intent-filter>
+        </activity>
     </application>
 
 </manifest>
