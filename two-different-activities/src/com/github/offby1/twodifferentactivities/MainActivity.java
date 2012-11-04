@@ -11,14 +11,14 @@ import android.widget.Button;
 public class MainActivity extends Activity {
     Button b;
 
-    MainActivity main_activity;
+    MainActivity this_activity;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        main_activity = this;
+        this_activity = this;
 
         b = (Button)this.findViewById(R.id.button1);
         b.setOnClickListener(new OnClickListener()
@@ -26,7 +26,7 @@ public class MainActivity extends Activity {
                 @Override
                 public void onClick(View v) {
                     Intent i = new Intent("com.github.offby1.intent.action.show_other_activity");
-                    main_activity.startActivity(i);
+                    this_activity.startActivity(i);
                 }
             });
     }
