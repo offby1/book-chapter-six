@@ -20,7 +20,6 @@ public class OtherActivity extends HasASettingsMenuActivity {
         b = (Button)this.findViewById(R.id.button1);
         b.setOnClickListener(new OnClickListener()
             {
-                @Override
                 public void onClick(View v) {
                     Intent i = new Intent(this_activity, MainActivity.class);
                     this_activity.startActivity(i);
