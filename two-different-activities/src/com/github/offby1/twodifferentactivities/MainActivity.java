@@ -3,6 +3,7 @@ package com.github.offby1.twodifferentactivities;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.ComponentName;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
@@ -22,8 +23,9 @@ public class MainActivity extends Activity {
             {
                 @Override
                 public void onClick(View v) {
-                    Intent i = new Intent(Intent.ACTION_VIEW,
-                                          Uri.parse("http://github.com"));
+                	Intent i = new Intent();
+                	i.setComponent(new ComponentName("com.github.offby1.twodifferentactivities",
+                                                         "OtherActivity"));
                     startActivity(i);
                 }
             });
