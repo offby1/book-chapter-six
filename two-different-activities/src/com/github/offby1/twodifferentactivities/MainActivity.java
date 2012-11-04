@@ -39,8 +39,9 @@ public class MainActivity extends HasASettingsMenuActivity {
                 public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 					long arg3) {
                     Toast.makeText(this_activity, String.format("Someone clicked on %d",
-                                                                arg1),
-                                   Toast.LENGTH_LONG).show();
+                                                                arg2),
+                                   Toast.LENGTH_SHORT).show()
+                        ;
 
                 }
             });
