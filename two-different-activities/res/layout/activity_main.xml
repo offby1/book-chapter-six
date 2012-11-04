@@ -18,7 +18,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView1"
         android:layout_marginTop="28dp"
-        android:hint="Don&apos;t be afraid! I&apos;m a professional computer programmer!"
-        android:text="Switch Activity" />
+        android:hint="@string/fear_not"
+        android:text="@string/switch_activity" />
 
 </RelativeLayout>
