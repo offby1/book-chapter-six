@@ -3,7 +3,7 @@ package com.github.offby1.twodifferentactivities;
 import android.app.Activity;
 import android.view.Menu;
 
-public class HasASettingsMenuActivity extends Activity {
+public abstract class HasASettingsMenuActivity extends Activity {
 
 	public HasASettingsMenuActivity() {
 		super();
