@@ -7,11 +7,9 @@ import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
 
 public class MainActivity extends HasASettingsMenuActivity {
-    Button b;
 
     MainActivity this_activity;
     ListView lv;
@@ -44,15 +42,6 @@ public class MainActivity extends HasASettingsMenuActivity {
                     }
 
                     Intent i = new Intent(this_activity, target_class);
-                    this_activity.startActivity(i);
-                }
-            });
-
-        b = (Button)this.findViewById(R.id.button1);
-        b.setOnClickListener(new OnClickListener()
-            {
-                public void onClick(View v) {
-                    Intent i = new Intent(this_activity, OtherActivity.class);
                     this_activity.startActivity(i);
                 }
             });
