@@ -1,12 +1,14 @@
 package com.github.offby1.twodifferentactivities;
 
 import android.os.Bundle;
+import android.content.ComponentName;
 import android.content.Intent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 public class MainActivity extends HasASettingsMenuActivity {
 
@@ -14,9 +16,9 @@ public class MainActivity extends HasASettingsMenuActivity {
     ListView lv;
 
     String[] data = {
-        MainActivity.class.getCanonicalName(),
-        OtherActivity.class.getCanonicalName(),
-        ThirdActivity.class.getCanonicalName()
+        MainActivity .class.getName(),
+        OtherActivity.class.getName(),
+        ThirdActivity.class.getName()
     };
     ArrayAdapter<String> adapter;
 
@@ -36,15 +38,10 @@ public class MainActivity extends HasASettingsMenuActivity {
                 public void onItemClick(AdapterView<?> arg0, View arg1, int index,
 					long arg3) {
 
-                    Class<?> target_class = MainActivity.class;
+                    CharSequence classFullName = ((TextView) arg1).getText ();
 
-                    switch (index) {
-                    case 1: target_class = OtherActivity.class; break;
-                    case 2: target_class = ThirdActivity.class; break;
-                    default: break;
-                    }
-
-                    Intent i = new Intent(this_activity, target_class);
+                    Intent i = new Intent();
+                    i.setComponent(new ComponentName("com.github.offby1.twodifferentactivities", classFullName.toString()));
                     this_activity.startActivity(i);
                 }
             });
