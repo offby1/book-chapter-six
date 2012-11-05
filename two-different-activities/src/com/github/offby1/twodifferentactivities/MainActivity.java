@@ -3,7 +3,6 @@ package com.github.offby1.twodifferentactivities;
 import android.os.Bundle;
 import android.content.Intent;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
@@ -14,7 +13,11 @@ public class MainActivity extends HasASettingsMenuActivity {
     MainActivity this_activity;
     ListView lv;
 
-    String[] data = { "item1", "item2", "item3" };
+    String[] data = {
+        MainActivity.class.getCanonicalName(),
+        OtherActivity.class.getCanonicalName(),
+        ThirdActivity.class.getCanonicalName()
+    };
     ArrayAdapter<String> adapter;
 
     @Override
