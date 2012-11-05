@@ -22,7 +22,8 @@
       </activity>
       <activity
           android:name=".OtherActivity"
-          android:label="The Other Activity" >
+          android:label="The Other Activity"
+          android:exported="false" >
         <intent-filter>
           <action android:name="com.github.offby1.intent.action.show_other_activity" />
           <category android:name="android.intent.category.DEFAULT" />
@@ -30,7 +31,8 @@
       </activity>
       <activity
           android:name=".ThirdActivity"
-          android:label="The Third Activity" >
+          android:label="The Third Activity"
+          android:exported="false">
         <intent-filter>
           <action android:name="com.github.offby1.intent.action.show_third_activity" />
           <category android:name="android.intent.category.DEFAULT" />
