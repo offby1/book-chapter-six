@@ -9,7 +9,6 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.Toast;
 
 public class MainActivity extends HasASettingsMenuActivity {
     Button b;
@@ -28,9 +27,6 @@ public class MainActivity extends HasASettingsMenuActivity {
         this_activity = this;
         lv = (ListView)this.findViewById (R.id.list);
 
-        Toast.makeText(this_activity, String.format("lv ID is %d",
-                                                    R.id.list), Toast.LENGTH_LONG).show();
-
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, data);
         lv.setAdapter (adapter);
 
@@ -38,15 +34,17 @@ public class MainActivity extends HasASettingsMenuActivity {
 
                 public void onItemClick(AdapterView<?> arg0, View arg1, int index,
 					long arg3) {
-                    Intent i = new Intent(this_activity, OtherActivity.class);
 
-                    Toast.makeText(this_activity, String.format("Someone clicked on %d",
-                                                                index),
-                                   Toast.LENGTH_SHORT).show();
-                    if (index == 1) {
-                        this_activity.startActivity(i);
+                    Class<?> target_class = MainActivity.class;
+
+                    switch (index) {
+                    case 1: target_class = OtherActivity.class; break;
+                    case 2: target_class = ThirdActivity.class; break;
+                    default: break;
                     }
 
+                    Intent i = new Intent(this_activity, target_class);
+                    this_activity.startActivity(i);
                 }
             });
 
