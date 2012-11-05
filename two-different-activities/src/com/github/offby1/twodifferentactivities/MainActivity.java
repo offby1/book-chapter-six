@@ -40,7 +40,14 @@ public class MainActivity extends HasASettingsMenuActivity {
 
                     CharSequence classFullName = ((TextView) arg1).getText ();
 
-                    Intent i = new Intent();
+                    Intent i;
+                    i = new Intent();
+
+                    if (index == 1) { // pass a Bundle with some text
+                        Bundle extras = new Bundle ();
+                        extras.putString("Extra", "EXTRA!! Read all about it!") ;
+                        i.putExtras (extras);
+                    }
                     i.setComponent(new ComponentName("com.github.offby1.twodifferentactivities", classFullName.toString()));
                     this_activity.startActivity(i);
                 }
